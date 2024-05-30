@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    padding: 10px;
+}
+.bg {
+    background: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+    animation: slide 3s ease-in-out infinite alternate;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+.bg3 {
+    animation-duration:5s;
+  }
+.calculator-grid {
+    display: grid;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    padding: 15px 10px;
+    border-radius: 5%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(100px, auto) repeat(5, 1fr);
+    gap: 0.5rem;
+}
+.calculator-grid > button {
+    cursor: pointer;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    background-color:rgba(255, 255, 255, .4);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 0 #333;
+}
+button:hover {
+    background-color: rgba(255, 255, 255, .6);
+}
+button:active {
+    background-color: rgba(255, 255, 255, .7);
+}
+.screen {
+    grid-column: 1/ -1;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    margin-bottom: 2px;
+    outline: none;
+    border: none;
+    border-radius: 5px 5px 1px 1px;
+    color: whitesmoke;
+    text-align: end;
+    text-overflow: hidden;
+    font-size: larger;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.span-two {
+    grid-column: span 2;
+}
+button.clear-all-btn {
+    background-color: rgb(197, 18, 18);
+}
+button.delete-btn {
+    color: rgb(197, 18, 18);
+}
+button.operation-btn {
+    background-color: rgb(13, 68, 105);
+}
+button.equals-btn {
+    background-color: rgba(61, 141, 21, 0.918);
+}
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
